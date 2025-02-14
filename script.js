@@ -1,18 +1,17 @@
-// let data = document.getElementById("numberInput").value;
-// console.log("Data entered is", data);
-// alert(data);
+document.getElementById("numberInput").addEventListener("input", processData);
 
-// function submit() {
-//   console.log("Submit clicked");
-// }
-let output = document.getElementById("output");
-let oddOrEven = document.getElementById("oddorEven");
-const submit = () => {
+function processData() {
+  let output = document.getElementById("output");
+  let oddOrEven = document.getElementById("oddorEven");
   let data = document.getElementById("numberInput").value;
-//   console.log("Data entered is", data);
-//   console.log("submit clicked");
+  console.log("Data entered is", data);
+  //   console.log("submit clicked");
   let value = parseInt(data);
-  if (data < 0) {
+  if (data === "" || data === "-") {
+    oddOrEven.textContent = "";
+    output.textContent = "";
+    // console.log("Hello here");
+  } else if (data < 0) {
     oddOrEven.textContent = "";
     output.textContent = `Enter a positive number`;
   } else if (data % 2 == 0) {
@@ -26,4 +25,4 @@ const submit = () => {
     oddOrEven.textContent = `Next 3 Odd Numbers...`;
     output.textContent = `${value + 2}, ${value + 4}, ${value + 6}`;
   }
-};
+}
