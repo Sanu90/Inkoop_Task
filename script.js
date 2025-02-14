@@ -1,2 +1,29 @@
-let data = document.getElementById("numberInput").value;
-console.log("Data entered is", data);
+// let data = document.getElementById("numberInput").value;
+// console.log("Data entered is", data);
+// alert(data);
+
+// function submit() {
+//   console.log("Submit clicked");
+// }
+let output = document.getElementById("output");
+let oddOrEven = document.getElementById("oddorEven");
+const submit = () => {
+  let data = document.getElementById("numberInput").value;
+//   console.log("Data entered is", data);
+//   console.log("submit clicked");
+  let value = parseInt(data);
+  if (data < 0) {
+    oddOrEven.textContent = "";
+    output.textContent = `Enter a positive number`;
+  } else if (data % 2 == 0) {
+    // console.log(typeof data);
+    // console.log(value + 2);
+    oddOrEven.textContent = `Next 3 Even Numbers...`;
+    output.textContent = `${value + 2}, ${value + 4}, ${value + 6}`;
+  } else if (data % 2 == 1) {
+    // console.log(typeof data);
+    // console.log(value + 2);
+    oddOrEven.textContent = `Next 3 Odd Numbers...`;
+    output.textContent = `${value + 2}, ${value + 4}, ${value + 6}`;
+  }
+};
